@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Jowensky/Friend-Finder/issues"
   },
-  "homepage": "https://github.com/Jowensky/Friend-Finder#readme"
+  "homepage": "https://github.com/Jowensky/Friend-Finder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
