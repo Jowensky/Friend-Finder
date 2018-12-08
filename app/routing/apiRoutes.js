@@ -1,11 +1,34 @@
+var user = require("../data/friends")
+
+function answerInt (answers) {
+  var scoreInt = [];
+
+  answers.forEach(function(vaule, index, array) {
+    array[index] = scoreInt.push(parseInt(vaule))
+  })
+  return scoreInt;
+};
+
 module.exports = function(app) {
 
-  $.post("/api/friends", function() {
-
+  app.get("/api/friends", function(req, res) {
+    res.json(user);
   });
 
-  // The AJAX function uses the URL of our API to GET the data associated with it
-  $.ajax({ url: "/api.friends", method: "GET" }).then(function() {
+  app.post("/api/friends", function(req, res) {
+    
+    newUser = {
+      name: req.body.name,
+      photo: req.body.photo,
+      answers: answerInt(req.body.answers)
+    }
 
+    user.push(newUser)
+    totalDifference = 0;
+
+    console.log(user)
+
+    res.json(newUser)
   });
 };
+
