@@ -50,7 +50,7 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
-
+ 
 # Yarn Integrity file
 .yarn-integrity
 
@@ -61,4 +61,4 @@ typings/
 .next
 
 # Do not track these files
-node_modules
+node_module
