@@ -29,16 +29,16 @@ module.exports = function(app) {
     var lowestdiff = []; // array for tracking differences between users
     var lowest = 0; // variable used to count differences 
 
-    for (var obj in user) { // iterates through existing user data 
-      for (var diff in newUser.answers) { // iterates through  existing user answers and the newUsers
-        lowest += Math.abs(user[obj].answers[diff] - newUser.answers[diff]); // finds differences between users
+    for (var obj in user) { // iterates through existing users data 
+      for (var diff in newUser.answers) { // iterates through  existing users answers and newUsers answers
+        lowest += Math.abs(user[obj].answers[diff] - newUser.answers[diff]); // finds differences between new user and existing
       }
-      lowestdiff.push(lowest); // the tallied difference is pushed into an array 
+      lowestdiff.push(lowest); // the tallyed difference is pushed into an array 
     }
     var i = lowestdiff.indexOf(Math.min(...lowestdiff)); // index of the lowest number is found to locate lowest differentiate user
   
 
-    user.push(newUser); // the new user is now in data object
-    res.json(user[i]); // lowest user is sent to client 
+    user.push(newUser); // the new user is now in friendsdata object
+    res.json(user[i]); // most compatiable user is sent to client 
   });
 };
