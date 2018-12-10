@@ -160,6 +160,7 @@
 	$("#submit").on("click", function(event) {
 		event.preventDefault();
 
+		// User input urned into object
 		var user = {
 			name: $("#userName").val().trim(),
 			photo: $("#userPic").val().trim(),
@@ -178,8 +179,10 @@
 		}	
 
 		console.log(user);
-
+		//AJAX POST REQUEST TO API SERVER
 		$.post("/api/friends", user, function(data) {
+
+		// Data will be posted on modal on return
 			$("#match-name").text(data.name);
 			$("#match-img").attr("src", data.photo);
 		});
