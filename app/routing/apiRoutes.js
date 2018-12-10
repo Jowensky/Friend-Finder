@@ -1,5 +1,6 @@
 var user = require("../data/friends");
 
+// turns req.body.answers into integers
 function answerInt(answers) {
   var scoreInt = [];
 
@@ -14,32 +15,30 @@ module.exports = function(app) {
     res.json(user);
   });
 
+  // handle's compatibility logic.
   app.post("/api/friends", function(req, res) {
+    // Post request is turned into object
     newUser = {
       name: req.body.name,
       photo: req.body.photo,
       answers: answerInt(req.body.answers)
     };
-    // turn into function
+ 
 
-    var lowestdiff = [];
-    var lowest = 0;
-    var obj = 0;
+   
+    var lowestdiff = []; // array for tracking differences between users
+    var lowest = 0; // variable used to count differences 
 
-    for (var obj in user) {
-      for (var diff in newUser.answers) {
-        lowest += Math.abs(user[obj].answers[diff] - newUser.answers[diff]);
+    for (var obj in user) { // iterates through existing user data 
+      for (var diff in newUser.answers) { // iterates through  existing user answers and the newUsers
+        lowest += Math.abs(user[obj].answers[diff] - newUser.answers[diff]); // finds differences between users
       }
-      lowestdiff.push(lowest);
+      lowestdiff.push(lowest); // the tallied difference is pushed into an array 
     }
+    var i = lowestdiff.indexOf(Math.min(...lowestdiff)); // index of the lowest number is found to locate lowest differentiate user
+  
 
-    var lowestnumber = Math.min(...lowestdiff);
-    var i = lowestdiff.indexOf(Math.min(...lowestdiff));
-    // turn into function
-    console.log(i)
-    console.log(lowestdiff);
-    console.log(lowestnumber);
-    user.push(newUser);
-    res.json(user[i]);
+    user.push(newUser); // the new user is now in data object
+    res.json(user[i]); // lowest user is sent to client 
   });
 };
