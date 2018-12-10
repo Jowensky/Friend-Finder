@@ -33,11 +33,11 @@ module.exports = function(app) {
       for (var diff in newUser.answers) { // iterates through  existing users answers and newUsers answers
         lowest += Math.abs(user[obj].answers[diff] - newUser.answers[diff]); // finds differences between new user and existing
       }
-      lowestdiff.push(lowest); // the tallyed difference is pushed into an array 
+      lowestdiff.unshift(lowest); // the tallyed difference is pushed into an array 
     }
     var i = lowestdiff.indexOf(Math.min(...lowestdiff)); // index of the lowest number is found to locate lowest differentiate user
-  
-
+    var lowestNumber = Math.min(...lowestdiff);
+ 
     user.push(newUser); // the new user is now in friendsdata object
     res.json(user[i]); // most compatiable user is sent to client 
   });
