@@ -36,7 +36,6 @@ module.exports = function(app) {
       lowestdiff.unshift(lowest); // the tallyed difference is pushed into an array 
     }
     var i = lowestdiff.indexOf(Math.min(...lowestdiff)); // index of the lowest number is found to locate lowest differentiate user
-    var lowestNumber = Math.min(...lowestdiff);
  
     user.push(newUser); // the new user is now in friendsdata object
     res.json(user[i]); // most compatiable user is sent to client 

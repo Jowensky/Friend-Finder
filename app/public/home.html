@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Friend-Finder</title>
+  <head>
+    <title>Friend Finder</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Thasadith"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <video autoplay muted id="vid" onended="blankout()">
+      <source src="video/fixed.mp4" type="video/mp4" />
+    </video>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"
-></script>
-</head>
-<body>
-
-  <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span>Friend-Finder</h1>
-      <hr>
-      <h2 class="text-center">Never be Lonely</h2>
+    <section class="opening">
+      <div id="finder"></div>
+      <!-- <div id="instructions">IRL friends are better <br> Enter State then Survey</div>  -->
       <br>
+      <input type="text" maxlength="2" placeholder="State"> <button type="submit" href="/survey" id="submit"><i class="fas fa-genderless"></i></button>
+    </section>
 
-      <div class="text-center">
-        <a href="/survey"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span>Take the Survey</button></a>
-      </div>
+    <!-- Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
 
-    </div>
+    <script>
+      var i = 0;
+      var p = 0;
 
-    <footer class="footer">
-      <div class="container">
-        <p><a href="/api/friends">API friends Link</a>
-      </div>
-    </footer>
+      function typeTitle() {
+        var txt = "Friend Finder"; 
+        var speed = 185;
+        if (i < txt.length) {
+          $("#finder").append(txt.charAt(i));
+          i++;
+          setTimeout(typeTitle, speed);
+        } else {
+          setTimeout(function() {$("#instructions").toggle("slow")}, 1 * 1000)
+          setTimeout(function() {
+            $(".opening input").toggle("slow");
+            $(".opening button").toggle("slow");
+          }, 2 * 1000);
+        }
+      }
 
-  </div>
+      $("#submit").on("click", function() {
+        window.location = "survey";
+      })
 
-
-</body>
+      function blankout() {
+        $("#vid").toggle("slow");
+        setTimeout(typeTitle, 1 * 1000);
+      }
+    </script>
+  </body>
 </html>
