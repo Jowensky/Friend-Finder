@@ -1,5 +1,4 @@
 var user = require("../data/friends");
-
 // turns req.body.answers into integers
 function answerInt(answers) {
   var scoreInt = [];
@@ -23,21 +22,23 @@ module.exports = function(app) {
       photo: req.body.photo,
       answers: answerInt(req.body.answers)
     };
- 
 
-   
     var lowestdiff = []; // array for tracking differences between users
-    var lowest = 0; // variable used to count differences 
 
-    for (var obj in user) { // iterates through existing users data 
-      for (var diff in newUser.answers) { // iterates through  existing users answers and newUsers answers
-        lowest += Math.abs(user[obj].answers[diff] - newUser.answers[diff]); // finds differences between new user and existing
+    for (var ob in user) {
+      var lowest = 0; // variable used to count differences
+      
+      for (var i = 0; i < newUser.answers.length - 2; i++) {
+        lowest += Math.abs(user[ob].answers[i] - newUser.answers[i]);
       }
-      lowestdiff.unshift(lowest); // the tallyed difference is pushed into an array 
+      lowestdiff.push(lowest);
     }
+
     var i = lowestdiff.indexOf(Math.min(...lowestdiff)); // index of the lowest number is found to locate lowest differentiate user
- 
+    console.log(lowestdiff[i])
+
     user.push(newUser); // the new user is now in friendsdata object
-    res.json(user[i]); // most compatiable user is sent to client 
+    console.log(user[i])
+    res.json(user[i]); // most compatiable user is sent to client
   });
 };

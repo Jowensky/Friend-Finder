@@ -14,7 +14,9 @@ var user = [{
         5,
         4,
         1
-    ],
+    ]
+},
+{
     "name": "Timmy",
     "photo": "",
     "answers": [
@@ -28,7 +30,9 @@ var user = [{
         5,
         2,
         1
-    ],
+    ]
+},
+{
     "name": "Disco",
     "photo": "",
     "answers": [

@@ -22,9 +22,9 @@
 
     <section class="opening">
       <div id="finder"></div>
-      <!-- <div id="instructions">IRL friends are better <br> Enter State then Survey</div>  -->
       <br>
-      <input type="text" maxlength="2" placeholder="State"> <button type="submit" href="/survey" id="submit"><i class="fas fa-genderless"></i></button>
+      <p class="instructions">Inside is a questionair that will match you with the most similar previous user. Be Honest while taking for best result </p>
+    <input id="userName" type="text" maxlength="2" placeholder="Name"> <button type="submit" href="/survey" id="submit"><i class="fas fa-genderless"></i></button>
     </section>
 
     <!-- Scripts -->
@@ -47,9 +47,9 @@
           i++;
           setTimeout(typeTitle, speed);
         } else {
-          setTimeout(function() {$("#instructions").toggle("slow")}, 1 * 1000)
+          setTimeout(function() {$(".instructions").toggle("slow")}, 1 * 1000)
           setTimeout(function() {
-            $(".opening input").toggle("slow");
+            // $(".opening input").toggle("slow");
             $(".opening button").toggle("slow");
           }, 2 * 1000);
         }
