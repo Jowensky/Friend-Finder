@@ -2,15 +2,35 @@ $(document).ready(function() {
   game.startGame();
 
   $("body").on("click", ".choose", function() {
-      console.log(user.name)
         game.handleSubmit(event);
       game.nextQuestion();
   });
+
+  $("body").on("click", "#submit", function() {
+    $("#finder").toggle();
+    $(".opening input").toggle();
+    $(".opening button").toggle();
+    var data = {
+      name: $("#userName").val(),
+      contact: $("#contact").val()
+    };
+    game.contact(data)
+    instruct();
+  });
+
+  function instruct() {
+    setTimeout(function() {
+        $(".instructions").toggle("slow");
+    }, 1 * 1000);
+
+    window.history.pushState(null, '', '/survey');
+  }
 });
 
 var user = {
-  name: $("#userName").val(),
-  photo: $("#userPic").val(),
+  name: null,
+  social: null,
+  photo: null,
   answers: []
 };
 
@@ -97,6 +117,12 @@ var game = {
         $("#q").append(`<button class="choose" data-value="${[i]}">${question.answers[i]}</button>`)
     }
   },
+  contact: function(data) {
+      console.log(data)
+    user.name = data.name
+    user.social = data.contact
+    console.log(user)
+  },
   handleSubmit: function(event) {
     selectedAnswer = $(event.target).data("value");
     user.answers.push(selectedAnswer);
@@ -104,7 +130,7 @@ var game = {
   },
   mate: function() {
     $.post("/api/friends", user, function(data) {
-        
+
       $("#match-name").text(data.name);
       $("#match-img").attr("src", data.photo);
     });

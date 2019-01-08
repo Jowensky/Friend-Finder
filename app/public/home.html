@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- CSS LINKS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Thasadith"
@@ -22,9 +25,16 @@
 
     <section class="opening">
       <div id="finder"></div>
-      <br>
-      <p class="instructions">Inside is a questionair that will match you with the most similar previous user. Be Honest while taking for best result </p>
-    <input id="userName" type="text" maxlength="2" placeholder="Name"> <button type="submit" href="/survey" id="submit"><i class="fas fa-genderless"></i></button>
+      <br />
+      <p class="instructions">
+        Inside is a questionair that will match you with the most similar
+        previous user. Be Honest for best result
+      </p>
+      <input id="userName" type="text" placeholder="Name" />
+      <input id="contact" type="text" placeholder="Contact" />
+      <button type="submit" href="/survey" id="submit">
+        <i class="fas fa-genderless"></i>
+      </button>
     </section>
 
     <!-- Scripts -->
@@ -33,31 +43,26 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="./javascript/script.js"></script>
 
     <script>
       var i = 0;
       var p = 0;
 
       function typeTitle() {
-        var txt = "Friend Finder"; 
+        var txt = "Friend Finder";
         var speed = 185;
         if (i < txt.length) {
           $("#finder").append(txt.charAt(i));
           i++;
           setTimeout(typeTitle, speed);
         } else {
-          setTimeout(function() {$(".instructions").toggle("slow")}, 1 * 1000)
           setTimeout(function() {
-            // $(".opening input").toggle("slow");
+            $(".opening input").toggle("slow");
             $(".opening button").toggle("slow");
           }, 2 * 1000);
         }
       }
-
-      $("#submit").on("click", function() {
-        window.location = "survey";
-      })
 
       function blankout() {
         $("#vid").toggle("slow");
