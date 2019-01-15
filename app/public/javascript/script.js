@@ -13,7 +13,6 @@ $(document).ready(function() {
       name: $("#userName").val(),
       contact: $("#contact").val()
     };
-    console.log(data)
     game.contact(data)
     instruct();
   });
@@ -120,15 +119,12 @@ var game = {
     }
   },
   contact: function(data) {
-    console.log(data)
     user.name = data.name
     user.social = data.contact
-    console.log(`This is the user: ${user}`)
   },
   handleSubmit: function(event) {
     selectedAnswer = $(event.target).data("value");
     user.answers.push(selectedAnswer);
-    console.log(user)
   },
   mate: function() {
     $.post("/api/friends", user, function(data) {
