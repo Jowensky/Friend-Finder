@@ -1,8 +1,7 @@
 $(document).ready(function() {
-  game.startGame();
 
   $("body").on("click", ".choose", function() {
-        game.handleSubmit(event);
+      game.handleSubmit(event);
       game.nextQuestion();
   });
 
@@ -14,6 +13,7 @@ $(document).ready(function() {
       name: $("#userName").val(),
       contact: $("#contact").val()
     };
+    console.log(data)
     game.contact(data)
     instruct();
   });
@@ -22,15 +22,16 @@ $(document).ready(function() {
     setTimeout(function() {
         $(".instructions").toggle("slow");
     }, 1 * 1000);
-
-    window.history.pushState(null, '', '/survey');
+    setTimeout(function(){
+      $(".questionair").toggle();
+      game.startGame();
+    }, 3 * 1000);
   }
 });
 
 var user = {
   name: null,
   social: null,
-  photo: null,
   answers: []
 };
 
@@ -87,6 +88,7 @@ var Questions = [
 
 var game = {
   startGame: function() {
+    $(".instructions").toggle();
     this.renderQuestion();
   },
   currentQuestion: 0,
@@ -118,21 +120,21 @@ var game = {
     }
   },
   contact: function(data) {
-      console.log(data)
+    console.log(data)
     user.name = data.name
     user.social = data.contact
-    console.log(user)
+    console.log(`This is the user: ${user}`)
   },
   handleSubmit: function(event) {
     selectedAnswer = $(event.target).data("value");
     user.answers.push(selectedAnswer);
-    console.log(user.answers)
+    console.log(user)
   },
   mate: function() {
     $.post("/api/friends", user, function(data) {
-
-      $("#match-name").text(data.name);
-      $("#match-img").attr("src", data.photo);
+      $(".questionair").toggle();
+      $(".match #match-name").text(data.name);
+      $(".match #match-social").text(data.social);
     });
   }
 };

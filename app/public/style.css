@@ -41,28 +41,46 @@ body {
   text-align: center;
 }
 .question label {
-    font-size: 100px;
-    top: 40%;
-    text-align: center;
+  font-size: 100px;
+  top: 40%;
+  text-align: center;
 }
 .question img {
-    width: 79vh;
-    height: auto;
-    margin: 0 auto;
+  width: 79vh;
+  height: auto;
+  margin: 0 auto;
 }
 #q {
-    position: fixed;
-    top: 70%;
-    width: 90vh;
-    margin: 0 auto;
-}
-#q .choose {
-    border-radius: 4px;
-    background-color: rgb(24, 24, 24);
-    color: floralwhite;
-    transition: background-color 2s;
-}
-#q .choose:hover {
-    background-color: rgb(8, 74, 8);
+  position: fixed;
+  top: 70%;
+  width: 90vh;
+  margin: 0 auto;
 }
 
+#q .choose {
+  border-radius: 4px;
+  background-color: rgb(24, 24, 24);
+  color: floralwhite;
+  transition: background-color 2s;
+}
+
+#q .choose:hover {
+  background-color: rgb(8, 74, 8);
+}
+
+.questionair {
+  display: none;
+}
+
+.match {
+  position: fixed;
+  top: 70%;
+  width: 90vh;
+  height: auto;
+  margin: 0 auto;
+}
+
+#match-name, #match-social {
+  text-align: center;
+  font-size: 30px;
+}

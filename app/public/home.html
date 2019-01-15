@@ -37,6 +37,22 @@
       </button>
     </section>
 
+    <section class="questionair">
+      <div class="survey">
+        <div class="question">
+          <label></label>
+          <img src="" alt="">
+          <br>
+          <div id="q"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="match">
+      <div id="match-name"></div>
+      <br>
+      <div id="match-social"></div>
+    </section>
     <!-- Scripts -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -47,7 +63,6 @@
 
     <script>
       var i = 0;
-      var p = 0;
 
       function typeTitle() {
         var txt = "Friend Finder";
@@ -60,7 +75,7 @@
           setTimeout(function() {
             $(".opening input").toggle("slow");
             $(".opening button").toggle("slow");
-          }, 2 * 1000);
+          }, 1 * 1400);
         }
       }
 

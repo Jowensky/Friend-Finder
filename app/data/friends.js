@@ -2,7 +2,7 @@
 // Used to cross reference new Users data to find friends
 var user = [{
     "name": "Ahmed",
-    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "social": "Hey, I don't know what to say.",
     "answers": [
         5,
         1,
@@ -18,7 +18,7 @@ var user = [{
 },
 {
     "name": "Timmy",
-    "photo": "",
+    "social": "Timmy like Tunner. Haha yea I know bad joke.",
     "answers": [
         4,
         1,
@@ -34,7 +34,7 @@ var user = [{
 },
 {
     "name": "Disco",
-    "photo": "",
+    "social": "Dance Dance Dance",
     "answers": [
         3,
         1,
