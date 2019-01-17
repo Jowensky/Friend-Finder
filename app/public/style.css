@@ -15,6 +15,7 @@ body {
 #finder {
   font-size: 100px;
 }
+
 #instructions {
   text-align: center;
   font-size: 100px;
@@ -32,44 +33,49 @@ body {
   display: none;
 }
 
+.opening #contact:focus {
+  width: 150px;
+  height: 100px;
+}
+
 /* SURVEY HREF */
-.survey {
+.questionair {
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 90vh;
   text-align: center;
+  display: none;
 }
-.question label {
+.questionair label {
+  margin-top: 20px;
   font-size: 100px;
   top: 40%;
   text-align: center;
 }
-.question img {
+.questionair img {
   width: 79vh;
   height: auto;
   margin: 0 auto;
 }
-#q {
-  position: fixed;
+.q {
+  position: absolute;
   top: 70%;
   width: 90vh;
   margin: 0 auto;
 }
 
-#q .choose {
+.q .choose {
+  width: 20vh;
   border-radius: 4px;
   background-color: rgb(24, 24, 24);
   color: floralwhite;
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
 
-#q .choose:hover {
+.q .choose:hover {
   background-color: rgb(8, 74, 8);
-}
-
-.questionair {
-  display: none;
+  cursor: pointer;
 }
 
 .match {

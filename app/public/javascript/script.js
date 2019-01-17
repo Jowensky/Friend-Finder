@@ -61,7 +61,7 @@ var Questions = [
   },
   {
     img:"./images/blok3.png",
-    answers: ["tetter", 'tote']
+    answers: ["bat", 'cage', "death", "else"]
   },
   {
     q: `Talkative`,
@@ -81,7 +81,7 @@ var Questions = [
   },
   {
     img: "./images/blok4.png",
-    answers: ["tetter", 'tote']
+    answers: ["back", 'pimple', "grit", "teeth"]
   },
 ];
 
@@ -96,26 +96,26 @@ var game = {
       game.currentQuestion += 1;
       game.renderQuestion();
     } else {
-        $("#q").html("");
+        $(".q").html("");
       game.mate();
     }
   },
   renderQuestion: function() {
     var question = Questions[this.currentQuestion];
 
-    $("#q").html("");
+    $(".q").html("");
     $("label").html("")
-    $(".question img").attr("src", "")
+    $(".questionair img").attr("src", "")
 
 
     if (question.q) {
     $("label").html(question.q);
     } else if (question.img) {
-        $(".question img").attr("src", question.img)
+        $(".questionair img").attr("src", question.img)
     }
 
     for (var i = 0; i < question.answers.length; i++) {
-        $("#q").append(`<button class="choose" data-value="${[i]}">${question.answers[i]}</button>`)
+        $(".q").append(`<button class="choose" data-value="${[i]}">${question.answers[i]}</button></br>`)
     }
   },
   contact: function(data) {

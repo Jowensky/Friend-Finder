@@ -19,7 +19,7 @@ module.exports = function(app) {
     // Post request is turned into object
     newUser = {
       name: req.body.name,
-      photo: req.body.photo,
+      social: req.body.social,
       answers: answerInt(req.body.answers)
     };
 
