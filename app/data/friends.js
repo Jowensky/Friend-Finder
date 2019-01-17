@@ -2,7 +2,7 @@
 // Used to cross reference new Users data to find friends
 var user = [{
     "name": "Ahmed",
-    "social": "Hey, I don't know what to say.",
+    "social": "I don't know what to say.",
     "answers": [
         0,
         1,

@@ -79,15 +79,18 @@ body {
 }
 
 .match {
-  left: 0; 
-  right: 0;
+  position: absolute;
+  left: 50%;
   top: 50%;
-  width: 100vh;
-  margin: 0 auto;
+  transform: translate(-50%, -50%);
 }
 
-#match-name, #match-social {
-  display: inline-block;
+#match-name {
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
+}
+
+#match-social {
+  text-align: center;
+  font-size: 37px;
 }
