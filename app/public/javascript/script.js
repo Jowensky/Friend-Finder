@@ -129,7 +129,7 @@ var game = {
   mate: function() {
     $.post("/api/friends", user, function(data) {
       $(".questionair").toggle();
-      $(".match #match-name").text(data.name);
+      $(".match #match-name").text(`Name's ${data.name}`);
       $(".match #match-social").text(data.social);
     });
   }

@@ -79,14 +79,15 @@ body {
 }
 
 .match {
-  position: fixed;
-  top: 70%;
-  width: 90vh;
-  height: auto;
+  left: 0; 
+  right: 0;
+  top: 50%;
+  width: 100vh;
   margin: 0 auto;
 }
 
 #match-name, #match-social {
+  display: inline-block;
   text-align: center;
   font-size: 30px;
 }
