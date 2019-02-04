@@ -6,6 +6,6 @@
 
 ![UI](/app/public/images/UI.gif)
 
-### Tech Stack: 
+#### Tech Stack: 
 * Node & Express.js 
 * Javacript
