@@ -9,5 +9,5 @@
 * Javacript & Node Express.js 
 
 ## Motivation 
-* A social app that utilzes abstract qeustioning to abstract a users geniune personality that they may or may not be conscious to. 
-* Utilzes Hermann Rorschach Ink blot test 
+* A social app that utilzes abstract questioning to abstract users geniune personality that they may or may not be conscious to. 
+* Employs Hermann Rorschach Ink blot test 
