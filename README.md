@@ -9,8 +9,9 @@
 * Express.js
 * Node.js
 * Javascript
-* OOP
 * Algorithm 
+* OOP
+
 
 ## Motivation 
 * A social app that utilzes abstract questioning to abstract users geniune personality that they may or may not be conscious to. 
