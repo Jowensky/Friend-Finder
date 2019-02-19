@@ -5,8 +5,12 @@
 
 ![UI](/app/public/images/UI.gif)
 
-### Tech Stack: 
-* Javacript & Node Express.js 
+## Build
+* Express.js
+* Node.js
+* Javascript
+* OOP
+* Algorithm 
 
 ## Motivation 
 * A social app that utilzes abstract questioning to abstract users geniune personality that they may or may not be conscious to. 
