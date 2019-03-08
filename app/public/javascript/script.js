@@ -48,7 +48,7 @@ var Questions = [
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `It is often difficult for you to relate to other people’s feelings.`,
+    q: `Difficult for you to relate to other people’s feelings.`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
