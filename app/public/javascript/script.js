@@ -44,7 +44,7 @@ var Questions = [
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Would prefer kickacks over parties`,
+    q: `Would prefer a kickacks over parties`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
