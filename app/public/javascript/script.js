@@ -40,19 +40,19 @@ var Questions = [
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Creative`,
+    q: `You rarely do something just out of sheer curiosity.`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Prefer kickacks over parties`,
+    q: `Would prefer kickacks over parties`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Sympathetic`,
+    q: `It is often difficult for you to relate to other people’s feelings.`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Care about peoples opinion of you`,
+    q: `People can rarely upset you`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
@@ -68,7 +68,7 @@ var Questions = [
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Critical`,
+    q: `You rarely get carried away by fantasies and ideas.`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
@@ -76,7 +76,7 @@ var Questions = [
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {
-    q: `Passionate`,
+    q: `Love the Arts`,
     answers:["1 (strong no)", "2", "3", "4", "5 (strong yes)"]
   },
   {

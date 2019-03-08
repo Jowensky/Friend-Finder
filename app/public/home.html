@@ -31,7 +31,7 @@
         previous user. <br> Be Honest for best result
       </p>
       <input id="userName" type="text" placeholder="Name" />
-      <input id="contact" type="text" placeholder="About You & Contact" />
+      <textarea id="contact" type="text" placeholder="About You & Contact"></textarea>
       <button type="submit" href="/survey" id="submit">
         <i class="fas fa-genderless"></i>
       </button>
@@ -70,6 +70,7 @@
         } else {
           setTimeout(function() {
             $(".opening input").toggle("slow");
+            $(".opening textarea").toggle("slow")
             $(".opening button").toggle("slow");
           }, 1 * 1400);
         }

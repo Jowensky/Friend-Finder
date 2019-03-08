@@ -29,7 +29,8 @@ body {
 }
 .opening button,
 .opening input,
-.instructions {
+.instructions,
+.opening textarea {
   display: none;
 }
 
